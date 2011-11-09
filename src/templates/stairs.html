@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Pair Stairs</title>
+    <script type="text/javascript" src="/media/javascript/jquery.js"></script>
+    <script type="text/javascript" src="/media/javascript/pair.js"></script>
+    <link rel="stylesheet" href="/media/css/stair.css" type="text/css">
+</head>
+<body>
+{% csrf_token %}
+
+{#<table>#}
+{#    {% for pair in pair_stairs %}#}
+{#        <tr>#}
+{#            <td class="programmer_name">{{ pair.first }}</td>#}
+{#            <td class="programmer_name">{{ pair.second }}</td>#}
+{#            <td ><a id="{{ pair.first }}_{{ pair.second }}" class="pair_times" href="#">{{ pair.times }}</a></td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+
+<table border="0">
+    <tr>
+        <td></td>
+        {% for programmer in programmers %}
+            <td class="programmer_name">{{ programmer.name }}</td>
+        {% endfor %}
+    </tr>
+    {% for programmer in programmers reversed%}
+    <tr>
+        <td>{{ programmer.name }}</td>
+        {% for pair in pair_stairs %}
+            {% if pair.second == programmer.name %}
+                <td class="pair_times_td"><a  href="#" id="{{ pair.first }}_{{ pair.second }}" class="pair_times">{{ pair.times }}</a></td>
+            {% endif %}
+
+        {% endfor %}
+    </tr>
+    {% endfor %}
+
+</table>
+
+ 
+</body>
+</html>

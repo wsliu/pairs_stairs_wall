@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Add one programmer</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <textarea id="programmer_name" name="programmer_name"></textarea>
+    <input id="add_programmer" type='submit'/>
+</form>
+</body>
+</html>
