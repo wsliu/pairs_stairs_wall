@@ -24,6 +24,7 @@ How to Use
 Notice
 ---------------------
 * When there is only one programmer, There will be nothing in pair_stairs(http://localhost:8000/stairs/)
+* Adding a programmer twice is not allowed
 
 
     
