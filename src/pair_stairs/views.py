@@ -22,9 +22,9 @@ def add_programmer(request):
                 if programmer.name == new_programmer:
                     response_render = render_to_response("programmer_exist.html",RequestContext(request))
                     return response_render
-                else:
-                    PairStairs(first = programmer.name, second = new_programmer, times = 0).save()
 
+        for programmer in all_programmer:
+            PairStairs(first = programmer.name, second = new_programmer, times = 0).save()
         Programmer(name = new_programmer).save()
         return redirect(view_stairs)
 

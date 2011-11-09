@@ -10,3 +10,9 @@
 .pair_times_td {
     text-align: center;
 }
+
+.title {
+    color: blue;
+    font-size: 20px;
+    padding-bottom: 8px;
+}
